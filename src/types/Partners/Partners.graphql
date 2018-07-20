@@ -1,0 +1,7 @@
+type Partners {
+  silkmoth: SilkMoth
+  asda: Asda
+  loveTyres: LoveTyres
+  gigaTyres: GigaTyres
+  myTyres: MyTyres
+}

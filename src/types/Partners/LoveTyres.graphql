@@ -1,0 +1,13 @@
+type LoveTyres {
+  ean: ID! #Not an EAN
+  brand: String
+  model: String
+  width: String
+  profile: String
+  size: String
+  speed_rating: String
+  load_index: String
+  xl: String
+  price: String
+  stock: Int
+}

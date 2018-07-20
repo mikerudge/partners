@@ -1,0 +1,7 @@
+type WheelInfo {
+  id: ID!
+  size: String
+  info: String
+  imgURL: String
+  tyreInfo: [TyreInfo]
+}

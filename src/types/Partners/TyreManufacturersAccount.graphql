@@ -1,0 +1,10 @@
+type TyreManufacturersAccount {
+  id: ID!
+  views: Int
+  clicks: Int
+  level: Int
+  pricePerImpression: Float
+  monthlySpend: Float
+  promoBanner: String
+  logo: String
+}

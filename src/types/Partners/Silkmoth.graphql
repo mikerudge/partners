@@ -1,0 +1,10 @@
+type SilkMoth {
+  manufacturerName: ID!
+  manufacturerCode: String
+  ean: String
+  pattern: String
+  salePriceInc: Float
+  inStock: Boolean
+  lastUpdate: String
+  url: String
+}

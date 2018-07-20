@@ -1,0 +1,20 @@
+type TyreInfo {
+  id: ID!
+  ean: ID!
+  treadId: ID!
+  logo: String
+  brand: String
+  model: String
+  size: String
+  width: String
+  profile: String
+  diameter: String
+  vehicleClass: String
+  price: String
+  description: String
+  fuelRating: String
+  wetRating: String
+  noiseRating: String
+  speedRating: String
+  loadRating: String
+}

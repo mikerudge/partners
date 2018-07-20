@@ -1,0 +1,20 @@
+type Vehicle {
+  id: ID!
+  type: String
+  vrm: String
+  make: String
+  model: String
+  makeCode: String
+  modelCode: String
+  mvrisCode: String
+  yearOfManufacture: String
+  vinSerialNo: String
+  dateFirstRegistered: String
+  engineCapacity: String
+  transmission: String
+  fuel: String
+  doorplan: String
+  imgURL: String
+  warrenty: String
+  wheelInfo: [WheelInfo]
+}

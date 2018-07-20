@@ -1,0 +1,22 @@
+type Asda {
+  title: String
+  link: String
+  description: String
+  google_product_category: String
+  id: String
+  condition: String
+  price: String
+  availability: String
+  image_link: String
+  shipping: String
+  gtin: String
+  brand: String
+  mpn: String
+  product_type: String
+  item_group_id: String
+  size: String
+  custom_label_0: String
+  custom_label_1: String
+  custom_label_2: String
+  custom_label_3: String
+}
