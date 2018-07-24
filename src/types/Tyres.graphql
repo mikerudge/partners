@@ -1,0 +1,15 @@
+type MotokikiTyre {
+  partnerId: String
+  partnerName: String
+  ean: String
+  mkId: String
+  make: String
+  model: String
+  price: Float
+  inStock: Boolean
+  url: String
+  load: String
+  speed: String
+  profile: String
+  size: String
+}

@@ -1,4 +1,5 @@
 type Query {
   partners: Partners
   driveright: Driveright
+  stock(ean: String): [MotokikiTyre]
 }

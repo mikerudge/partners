@@ -10,7 +10,11 @@ const TyreSchema = new Schema({
   model: String,
   price: Number,
   inStock: Boolean,
-  url: String
+  url: String,
+  load: String,
+  speed: String,
+  profile: String,
+  size: String
 });
 
 const tyre = mongoose.model("Tyre", TyreSchema);

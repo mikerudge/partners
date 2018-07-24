@@ -25,7 +25,11 @@ const addLoveTyres = async () => {
         model: tyre.model,
         price: parseFloat(tyre.price),
         inStock: tyre.stock === "0" ? false : true,
-        url: tyre.link
+        url: tyre.link,
+        load: tyre.load_index,
+        speed: tyre.speed_rating,
+        profile: tyre.profile,
+        size: tyre.size
       };
 
       tyres.push(data);

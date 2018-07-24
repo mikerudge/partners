@@ -14,12 +14,44 @@ import { typeDef as SilkMoth } from "./types/Partners/Silkmoth.graphql";
 import { typeDef as Asda } from "./types/Partners/Asda.graphql";
 import { typeDef as LoveTyres } from "./types/Partners/LoveTyres.graphql";
 import { typeDef as Driveright } from "./types/Driveright.graphql";
-import { typeDef as GigaTyres } from './types/Partners/GigaTyres.graphql'
+import { typeDef as GigaTyres } from "./types/Partners/GigaTyres.graphql";
 import { typeDef as MyTyres } from "./types/Partners/MyTyres.graphql";
+import { typeDef as MotokikiTyre } from "./types/Tyres.graphql";
+
+import Tyres from "./models/main";
+
+const resolvers = {
+  Query: {
+    stock(root, args, context, info) {
+      if (!args.ean) {
+        console.log("no args", args);
+        return Tyres.find();
+      }
+
+      const { ean } = args;
+
+      return Tyres.find({ ean }).then(response => {
+        console.log("response", response);
+        return response;
+      });
+    }
+  }
+};
 
 // Required: Export the GraphQL.js schema object as "schema"
 export const schema = makeExecutableSchema({
-  typeDefs: [Query, Partners, SilkMoth, Asda, Driveright, LoveTyres, GigaTyres, MyTyres]
+  typeDefs: [
+    Query,
+    Partners,
+    SilkMoth,
+    Asda,
+    Driveright,
+    LoveTyres,
+    GigaTyres,
+    MyTyres,
+    MotokikiTyre
+  ],
+  resolvers
 });
 
 // Optional: Export a function to get context from the request. It accepts two
