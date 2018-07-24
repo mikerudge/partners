@@ -1,9 +1,0 @@
-type User {
-  id: ID!
-  name: String
-  email: String
-  phone: String
-  vehicles: [Vehicle]
-  vehicle(ean: ID!): Vehicle
-  wheelInfo: WheelInfo
-}

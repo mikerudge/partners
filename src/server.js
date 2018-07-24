@@ -2,6 +2,13 @@ import express from "express";
 import { graphqlExpress, graphiqlExpress } from "apollo-server-express";
 import bodyParser from "body-parser";
 import { express as voyagerMiddleware } from "graphql-voyager/middleware";
+import mongoose from "mongoose";
+
+// Functions
+import Silkmoth from "./api/silkmoth";
+import LoveTyres from "./api/lovetyres";
+import GigaTyres from "./api/gigaTyres";
+import MyTyres from "./api/myTyres";
 
 import * as Schema from "./schema";
 
@@ -59,9 +66,24 @@ server.use(
   })
 );
 
-server.listen(PORT, () => {
-  console.log(
-    `GraphQL Server is now running on http://localhost:${PORT}/graphql`
-  );
-  console.log(`View voyager at http://localhost:${PORT}/voyager`);
+// Setup Mongo
+mongoose.connect("mongodb://localhost/test");
+var db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", function() {
+  // we're connected!
+
+  server.emit("ready");
+
+  console.log("connected to the DB");
+});
+
+server.on("ready", function() {
+  server.listen(PORT, async () => {
+    console.log("server is running");
+    const silkmoth = await Silkmoth();
+    const lveTyres = await LoveTyres();
+    const gTyres = await GigaTyres();
+    const mTyres = await MyTyres();
+  });
 });
